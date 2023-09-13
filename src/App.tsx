@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import NavigationMenu from "./components/NavigationMenu";
+import { Route, Routes } from "react-router";
+import HomePage from "./pages/HomePage";
+import LibrariesListPage from "./pages/LibrariesListPage";
+import LibrariesDetailsPage from "./pages/LibrariesDetailsPage";
+import AboutPage from "./pages/AboutPage";
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavigationMenu></NavigationMenu>
+     <Container className="my-5">
+     <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/home" element={<HomePage />}></Route>
+        <Route path="/libraries" element={<LibrariesListPage />}></Route>
+        <Route path="/libraries/:id" element={<LibrariesDetailsPage />}></Route>
+        <Route path="/about" element={<AboutPage />}></Route>
+      </Routes>
+     </Container>
     </div>
   );
 }
