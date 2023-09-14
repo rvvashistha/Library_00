@@ -1,8 +1,11 @@
 import React from 'react'
+import LibrarieList from '../components/LibrariesList/LibrarieList'
 
 const LibrariesListPage = () => {
   return (
-    <div></div>
+    <div>
+      <LibrarieList></LibrarieList>
+    </div>
   )
 }
 
